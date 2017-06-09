@@ -32,37 +32,81 @@
                 color: #df691a !important;
                 text-decoration: none !important;
             }
+
+            tr:hover {
+                transition: background .2s;
+            }
+
+            .nav-tabs > li > a:hover {
+                transition: background .2s;
+            }
         </style>
     </head>
-    <body style="font-size: 12pt">
-        <div class="container" style="max-width: 1000px">
-            <div class="block">
-                <h2 style="text-align:center;">Chuancong Gao <small>PhD Candidate</small></h2>
+    <body style="font-size: 12pt"><div class="container" style="max-width: 1000px">
+        <br>
+        <div class="block">
+            <h2 style="text-align:center;">Chuancong Gao <small>PhD Candidate</small></h2>
+        </div>
+        <br>
+        <table><tbody><tr>
+            <td width="120">
+                <img src="img/chuancong.jpg" width="120" height="120">
+            </td>
+            <td>
+                <div class="block">
+                    Hello. I am a PhD candidate in computering science at <a href="http://www.sfu.ca">Simon Fraser University</a>. My research focus on <mark>Database</mark>, <mark>Data Integration</mark>, <mark>Data Cleaning</mark>, and <mark>Data Mining</mark>. I am expected to graduate in September, 2017.
+                    <br>
+                    <br>
+                    Currently I am leading the development of multiple large scale data analysis/visualization projects.
+                    <br>
+                    <br>
+                    [<a href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>]
+                    [<a href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>]
+                    [<a href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>]
+                    [<a href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>]
+                    [<a href="https://www.slideshare.net/ChuancongGao"><i class="fa fa-slideshare"></i> SlideShare</a>]
+                    [<a href="files/resume.pdf"><i class="fa fa-file-text"></i> Resume</a>]
+                </div>
+            </td>
+        </tr></tbody></table>
+        <br>
+        <ul class="nav nav-tabs" role="tablist" style="clear:left">
+            <li role="presentation" class="active"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab"><i class="fa fa-code"></i> Projects</a></li>
+            <li role="presentation"><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab"><i class="fa fa-flask"></i> Publications</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active fade in" id="projects">
+                <table class="table table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <td width="200">
+                            <img src="img/ncaa.png" width="200" height="200">
+                        </td>
+                        <td>
+                            NCAA Game Report Generator (2015 -- Now)
+                            <span class="tag">(<i class="fa fa-user"></i> Tech Lead)</span>
+                            <br>
+                            <br>
+                            Automatically collect and parse the statistic and play-by-play data after each NCAA men/women's basketball game, and generate detailed analysis/visualization report for the team coach.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="200">
+                            <img src="img/genaminer.png" width="200" height="200">
+                        </td>
+                        <td>
+                            <a href="http://gena-lab.cmns.sfu.ca">GeNA Miner</a>
+                            (2014 -- Now)
+                            <span class="tag">(<i class="fa fa-user"></i> Tech Lead)</span>
+                            <br>
+                            <br>
+                            A large scale data collecting/analysis/visualization system for different data sources, including PubMed, Twitter, and any user uploaded data.
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
             </div>
-
-            <table><tbody><tr>
-                <td>
-                    <div class="block">
-                        <img src="chuancong.jpg" width="100" height="100">
-                    </div>
-                </td>
-                <td>
-                    <div class="block">
-                        Hello. I am a PhD candidate in computering science at <a href="http://www.sfu.ca">Simon Fraser University</a>. My research focus on <mark>Database</mark>, <mark>Data Integration</mark>, <mark>Data Cleaning</mark>, and <mark>Data Mining</mark>. I am expected to graduate in September, 2017.
-                        <br>
-                        <br>
-                        [<a href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>]
-                        [<a href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>]
-                        [<a href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>]
-                        [<a href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>]
-                        [<a href="https://www.slideshare.net/ChuancongGao"><i class="fa fa-slideshare"></i> SlideShare</a>]
-                        [<a href="resume.pdf"><i class="fa fa-file-text"></i> Resume</a>]
-                    </div>
-                </td>
-            </tr></tbody></table>
-            <div class="block" style="clear:left">
-                <h4>Publications:</h4>
-
+            <div role="tabpanel" class="tab-pane fade" id="publications">
                 <table class="table table-striped table-hover">
                 <tbody>
                     <tr><td>
@@ -119,7 +163,7 @@
                         <u>Chuancong Gao</u>
                         <span class="tag">(<i class="fa fa-graduation-cap"></i> Master Thesis, in Chinese)</span>
                         <br>
-                        <em><a class="text-info" href="http://doi.acm.org/10.1145/1835804.1835913">面向分类的模式发现算法 (Pattern Discovery Algorithms for Classification)</a></em>
+                        <em>Pattern Discovery Algorithms for Classification</em>
                         <span class="tag">
                             [<a href="https://www.slideshare.net/ChuancongGao/master-thesis-2010-pattern-discovery-algorithms-for-classification"><i class="fa fa-slideshare"></i> Slides</a>]
                         </span>
@@ -172,5 +216,5 @@
                 </table>
             </div>
         </div>
-    </body>
+    </div></body>
 </html>
