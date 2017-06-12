@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="icon" href="img/chuancong.jpg">
 
         <title>
@@ -14,18 +16,23 @@
 
         <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
 
+        <script src="static/js/bootbox.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#projects .preview').hover(function() {
-                    $(this).addClass('scale2x');
-                }, function() {
-                    $(this).removeClass('scale2x');
+                $('.preview').click(function() {
+                    src = $(this).attr("src");
+                    bootbox.dialog({
+                        message: `<img src=${src} style="display: block; margin-left: auto; margin-right: auto;">`,
+                        onEscape: true,
+                        backdrop: true,
+                        closeButton: false
+                    });
                 });
 
-                $('#publications .preview').hover(function() {
-                    $(this).addClass('scale4x');
-                }, function() {
-                    $(this).removeClass('scale4x');
+                $("body").on("click", ".bootbox", function() {
+                    bootbox.hideAll();
+                    flag = false;
                 });
             });
         </script>
@@ -64,14 +71,12 @@
                 transition: background .2s;
             }
 
-            .scale2x {
-                transform: scale(2);
-            }
-            .scale4x {
-                transform: scale(4);
-            }
             .preview {
                 transition: all .2s ease-in-out;
+                cursor: pointer;
+            }
+            .preview:hover{
+                filter: opacity(75%);
             }
         </style>
     </head>
@@ -113,7 +118,7 @@
                 <li role="presentation"><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab"><i class="fa fa-flask"></i> Publications</a></li>
             </ul>
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active fade in" id="projects">
+                <div role="tabpanel" class="table-responsive tab-pane active fade in" id="projects">
                     <table class="table table-hover">
                     <tbody>
                         <tr>
@@ -150,7 +155,7 @@
                     </table>
                 </div>
 
-                <div role="tabpanel" class="tab-pane fade" id="publications">
+                <div role="tabpanel" class="table-responsive tab-pane fade" id="publications">
                     <table class="table table-hover">
                     <tbody>
                         <tr>

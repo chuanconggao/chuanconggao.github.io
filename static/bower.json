@@ -11,6 +11,7 @@
     "bootstrap": "3.*.*",
     "bootswatch": "*",
     "fontawesome": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "bootbox.js": "bootbox#^4.4.0"
   }
 }
