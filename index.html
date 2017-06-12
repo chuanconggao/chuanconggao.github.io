@@ -23,7 +23,7 @@
                 $('.preview').click(function() {
                     src = $(this).attr("src");
                     bootbox.dialog({
-                        message: `<img src=${src} style="display: block; margin-left: auto; margin-right: auto;">`,
+                        message: `<img src=${src}>`,
                         onEscape: true,
                         backdrop: true,
                         closeButton: false
@@ -75,8 +75,15 @@
                 transition: all .2s ease-in-out;
                 cursor: pointer;
             }
-            .preview:hover{
+            .preview:hover {
                 filter: opacity(75%);
+            }
+
+            .bootbox img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 100%;
             }
         </style>
     </head>
