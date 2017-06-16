@@ -38,6 +38,25 @@
         </script>
 
         <style>
+            @keyframes spin {
+                from {
+                    transform:rotate(0deg);
+                }
+                to {
+                    transform:rotate(360deg);
+                }
+            }
+
+            .avatar {
+                border-radius: 50%;
+            }
+            .avatar:hover {
+                animation-name: spin;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
             .block {
                 margin: 10px;
             }
@@ -72,7 +91,7 @@
             }
 
             .preview {
-                transition: all .2s ease-in-out;
+                transition: all .2s;
                 cursor: pointer;
             }
             .preview:hover {
@@ -96,7 +115,7 @@
             <br>
             <table><tbody><tr>
                 <td width="150">
-                    <img src="img/chuancong.jpg" width="150">
+                    <img class="avatar" src="img/chuancong.jpg" width="150">
                 </td>
                 <td>
                     <div class="block">
@@ -130,7 +149,7 @@
                     <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <td width="100">
+                            <td width="125">
                                 <span class="text-info">2015 -- Now</span>
                             </td>
                             <td width="200">
@@ -141,7 +160,9 @@
                                 <span class="tag">(Tech Lead)</span>
                                 <br>
                                 <br>
-                                Automatically collect and parse the statistic and play-by-play data after each NCAA men/women's basketball game, and generate detailed analysis/visualization report for the team coach.
+                                <span class="secondary">
+                                    Automatically collect and parse the statistic and play-by-play data after each NCAA men/women's basketball game, and generate detailed analysis/visualization report for the team coach.
+                                </span>
                             </td>
                         </tr>
                         <tr>
@@ -156,7 +177,9 @@
                                 <span class="tag">(Tech Lead)</span>
                                 <br>
                                 <br>
+                                <span class="secondary">
                                 A large scale data collecting/analysis/visualization system for different data sources, including PubMed, Twitter, and any user uploaded data.
+                                </span>
                             </td>
                         </tr>
                     </tbody>
@@ -167,13 +190,13 @@
                     <table class="table table-hover">
                     <tbody>
                         <tr>
-                            <td width="50">
+                            <td width="100">
                                 <span class="text-warning">Pending</span>
                             </td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td width="100">
+                            <td>
                                 <img src="img/sfu.jpg" width="100">
                             </td>
                             <td>
