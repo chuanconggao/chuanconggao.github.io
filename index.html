@@ -20,6 +20,12 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+                $(".avatar").bind('animationiteration', function() {
+                    $(this).addClass("paused");
+                }).hover(function() {
+                    $(this).removeClass("paused");
+                });
+
                 $('.preview').click(function() {
                     src = $(this).attr("src");
                     bootbox.dialog({
@@ -53,11 +59,13 @@
 
             .avatar {
                 border-radius: 50%;
+                animation: spin 2s infinite;
+            }
+            .avatar.paused {
+                animation-play-state: paused;
             }
             .avatar:hover {
-                animation-name: spin;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;
+                animation-play-state: running;
             }
 
             .block {
@@ -118,7 +126,7 @@
             <br>
             <table><tbody><tr>
                 <td width="150">
-                    <img class="avatar" src="img/chuancong.jpg" width="150">
+                    <img class="avatar paused" src="img/chuancong.jpg" width="150">
                 </td>
                 <td>
                     <div class="block">
