@@ -20,7 +20,7 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $(".avatar").bind('animationiteration', function() {
+                $(".avatar").on('animationiteration', function() {
                     $(this).addClass("paused");
                 }).hover(function() {
                     $(this).removeClass("paused");
@@ -222,6 +222,7 @@
                             </td>
                             <td>
                                 <img src="img/projects/kdd08.jpg" width="200">
+                                <br>
                                 <span class="secondary"><small>
                                     Image from <a href="http://www.kdd.org/conferences">KDD</a> website.
                                 </small></span>
