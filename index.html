@@ -40,6 +40,35 @@
                     bootbox.hideAll();
                     flag = false;
                 });
+
+                $('[title]').tooltip({
+                    container: 'body',
+                    placement: 'bottom'
+                });
+
+                function checkSticky() {
+                    var e = $('.nav');
+                    if ($(window).scrollTop() >= e.offset().top) {
+                        e.addClass("sticky");
+                    } else {
+                        e.removeClass("sticky");
+                    }
+                }
+
+                $(window).scroll(() => {
+                    if ($(window).scrollTop() > 10) {
+                        $("#backToTop").fadeIn();
+                    } else {
+                        $("#backToTop").fadeOut();
+                    }
+
+                    checkSticky();
+                });
+
+                checkSticky();
+
+                $('.nav-tabs a').click(() => $(window).scrollTop(0));
+                $("#backToTop").click(() => $(window).scrollTop(0));
             });
         </script>
 
@@ -47,6 +76,11 @@
             mark {
                 padding: .1em;
                 border-radius: 5px;
+            }
+
+            .tooltip {
+                opacity: 0.5 !important;
+                font-size: 12px;
             }
 
             .table-hover > tbody > tr.no-hover {
@@ -106,10 +140,18 @@
                 transition: background .2s;
             }
 
+            .nav-tabs {
+                z-index: 1000;
+                transition: background .4s;
+            }
+            .nav-tabs.sticky {
+                background-color: rgba(43, 62, 80, 0.9);
+            }
             .nav-tabs > li > a:hover {
                 transition: background .2s;
             }
             .nav-tabs > li.active > a {
+                color: rgba(255, 255, 255, .4) !important;
                 background-color: rgba(43, 62, 80, .5) !important;
             }
             .tab-content {
@@ -151,6 +193,14 @@
                 -ms-filter: blur(8px) opacity(33%);
                 filter: blur(8px) opacity(33%);
             }
+
+            #backToTop {
+                display: none;
+                position: fixed;
+                margin: 10px;
+                right: 0px;
+                opacity: 0.5 !important;
+            }
         </style>
     </head>
     <body style="font-size: 12pt">
@@ -159,10 +209,12 @@
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
         </small></span>
 
+        <button id="backToTop" class="btn btn-default" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
+
         <div class="container" style="max-width: 1000px">
             <br>
             <div class="block">
-                <h2 style="text-align:center;">Chuancong Gao <small class="secondary">PhD Candidate</small></h2>
+                <h2 style="text-align:center;"><span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary">PhD Candidate</small></h2>
             </div>
             <br>
             <table><tbody><tr>
@@ -184,7 +236,7 @@
                 </td>
             </tr></tbody></table>
             <br>
-            <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-tabs" role="tablist" style="position: sticky; top: 0px">
                 <li role="presentation" class="active"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab"><i class="fa fa-code"></i> Projects</a></li>
                 <li role="presentation"><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab"><i class="fa fa-flask"></i> Publications</a></li>
                 <li role="presentation"><a href="#services" aria-controls="services" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Services</a></li>
