@@ -65,19 +65,6 @@
         </script>
 
         <style>
-            mark {
-                padding: .1em;
-                border-radius: 5px;
-            }
-
-            .tooltip {
-                opacity: 0.5 !important;
-            }
-
-            .table-hover > tbody > tr.no-hover {
-                background-color: inherit !important;
-            }
-
             @keyframes spin {
                 from {
                     transform: rotate(0deg);
@@ -98,6 +85,43 @@
                 animation-play-state: running;
             }
 
+            .background {
+                background-image: url('https://source.unsplash.com/featured');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+
+                display: block;
+                position: fixed;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+
+                filter: blur(5px) opacity(25%);
+            }
+
+            #backToTop {
+                display: none;
+                position: fixed;
+                margin: 10px;
+                right: 0px;
+                opacity: 0.5 !important;
+            }
+
+            mark {
+                padding: .1em;
+            }
+
+            .tooltip {
+                opacity: 0.5 !important;
+            }
+
+            .table-hover > tbody > tr.no-hover {
+                background-color: inherit !important;
+            }
+
             .block {
                 margin: 10px;
             }
@@ -114,20 +138,31 @@
                 border: 1px solid #4e5d6c;
             }
 
+            .table {
+                margin: 0px;
+            }
+
             table {
                 font-size: 1em !important;
             }
-            table a {
-                color: #df691a !important;
-                text-decoration: none !important;
+
+            a[role="tab"], .btn, tr {
+                transition: background .2s;
             }
 
             th, td {
                 white-space: normal !important;
             }
 
-            tr:hover {
-                transition: background .2s;
+            a {
+                color: #df691a !important;
+            }
+            a:not(:hover) {
+                text-decoration: none !important;
+            }
+
+            .btn, a[role="tab"] {
+                color: #ffffff !important;
             }
 
             .nav-tabs {
@@ -162,34 +197,9 @@
                 margin-right: auto;
                 max-width: 100%;
             }
-
-            .background {
-                background-image: url('https://source.unsplash.com/featured');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed;
-
-                display: block;
-                position: fixed;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-
-                filter: blur(5px) opacity(25%);
-            }
-
-            #backToTop {
-                display: none;
-                position: fixed;
-                margin: 10px;
-                right: 0px;
-                opacity: 0.5 !important;
-            }
         </style>
     </head>
-    <body style="font-size: 12pt">
+    <body>
         <div class="background"></div>
         <span class="secondary" style="position: absolute; top: 0pt; right: 0pt"><small>
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
@@ -215,8 +225,8 @@
                         <br>
                         <img src="img/email.png">
                         <span class="tag">
-                            [<a href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>]
-                            [<a href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>]
+                            <a class="btn btn-default btn-sm" href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>
+                            <a class="btn btn-default btn-sm" href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>
                         </span>
                     </div>
                 </td>
@@ -237,7 +247,7 @@
                             <td>
                                 <span class="text-primary"><i class="fa fa-star"></i> Highlights</span>
                                 <span class="tag">
-                                    [<a href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>]
+                                    <a class="btn btn-default btn-sm" href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>
                                 </span>
                             </td>
                         </tr>
@@ -266,7 +276,7 @@
                             </td>
                             <td>
                                 Game Analysis for Canada National Women's Soccer
-                                <span class="tag">(Tech Lead)</span>
+                                <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
                                 <span class="secondary">
@@ -283,7 +293,7 @@
                             </td>
                             <td>
                                 Game Analysis for NCAA Men/Women's Basketball
-                                <span class="tag">(Tech Lead)</span>
+                                <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
                                 <span class="secondary">
@@ -303,7 +313,7 @@
                             </td>
                             <td>
                                 <a href="http://gena-lab.cmns.sfu.ca">GeNA Miner</a>
-                                <span class="tag">(Tech Lead)</span>
+                                <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
                                 <span class="secondary">
@@ -356,8 +366,8 @@
                             <td>
                                 <span class="text-primary"><i class="fa fa-star"></i> Highlights</span>
                                 <span class="tag">
-                                    [<a href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>]
-                                    [<a href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>]
+                                    <a class="btn btn-default btn-sm" href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>
+                                    <a class="btn btn-default btn-sm" href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>
                                 </span>
                             </td>
                         </tr>
@@ -390,7 +400,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao.</u>
-                                <span class="tag">(<i class="fa fa-graduation-cap"></i> PhD Thesis)</span>
+                                <span class="tag"><i class="fa fa-graduation-cap"></i> PhD Thesis</span>
                                 <br>
                                 <em><a>Data Integration on Complex Data.</a></em>
                                 <br>
@@ -431,11 +441,11 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Jiannan Wang, Jian Pei, Rui Li, Yi Chang.
-                                <span class="tag">(<mark><i class="fa fa-trophy"></i> Best Student Paper <a href="http://webintelligence2017.com/program/awards/" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark>)</span>
+                                <span class="tag"><mark><i class="fa fa-trophy"></i> Best Student Paper <a href="http://webintelligence2017.com/program/awards/" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark></span>
                                 <br>
                                 <em><a href="http://doi.acm.org/10.1145/3106426.3106484">Preference-driven Similarity Join.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/wi-2017-preferencedriven-similarity-join"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/wi-2017-preferencedriven-similarity-join">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">17th IEEE/WIC/ACM International Conference on Web Intelligence, 2017.</span>
@@ -450,8 +460,8 @@
                                 <br>
                                 <em><a>Schema-less Join for Result Set Preferences.</a></em>
                                 <span class="tag">
-                                    [<a href="papers/iri17.pdf"><i class="fa fa-archive"></i> Preprint</a>]
-                                    [<a href="https://www.slideshare.net/ChuancongGao/iri-2017-schemaless-join-for-result-set-preferences"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="papers/iri17.pdf">Preprint</a>
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/iri-2017-schemaless-join-for-result-set-preferences">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">IEEE 18th International Conference on Information Reuse and Integration, 2017.</span>
@@ -487,7 +497,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Xin Cao, Gao Cong, Man Lung Yiu, Xiaokui Xiao.
-                                <span class="tag">(Technical Report)</span>
+                                <span class="tag">Technical Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft12.pdf">Mining Discriminative Distance-Aware Patterns for Trajectory Prediction.</a></em>
                                 <br>
@@ -503,7 +513,7 @@
                                 <br>
                                 <em><a href="http://doi.acm.org/10.1145/2247596.2247628">Top-k interesting phrase mining in ad-hoc collections using sequence pattern indexing.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/edbt-12-topk-interesting-phrase-mining-in-adhoc-collections-using-sequence-pattern-indexing"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/edbt-12-topk-interesting-phrase-mining-in-adhoc-collections-using-sequence-pattern-indexing">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">15th International Conference on Extending Database Technology, 2012.</span>
@@ -524,7 +534,7 @@
                                 <br>
                                 <em><a href="http://doi.ieeecomputersociety.org/10.1109/ICDM.2011.61">Efficient Discovery of Closed Sequential Patterns over Stream Sliding Window.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/icde-2011-efficient-mining-of-closed-sequential-patterns-on-stream-sliding-window"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/icde-2011-efficient-mining-of-closed-sequential-patterns-on-stream-sliding-window">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">11th IEEE International Conference on Data Mining, 2011.</span>
@@ -542,7 +552,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Jianyong Wang.
-                                <span class="tag">(Technical Report)</span>
+                                <span class="tag">Technical Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft10.pdf">Efficient Discovery of Periodic Patterns over Event Sequences.</a></em>
                                 <br>
@@ -555,11 +565,11 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>.
-                                <span class="tag">(<mark><i class="fa fa-trophy"></i> <i class="fa fa-graduation-cap"></i> Outstanding Master Thesis <a href="http://www.tsinghua.edu.cn/publish/cs/4850/2010/20101218192607343623974/20101218192607343623974_.html" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark>)</span>
+                                <span class="tag"><mark><i class="fa fa-trophy"></i> <i class="fa fa-graduation-cap"></i> Outstanding Master Thesis <a href="http://www.tsinghua.edu.cn/publish/cs/4850/2010/20101218192607343623974/20101218192607343623974_.html" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark></span>
                                 <br>
                                 <em><a href="http://innopac.lib.tsinghua.edu.cn/search~S5*eng?/c100240140/c100240140/-3%2C-1%2C0%2CB/frameset&FF=c100240140&1%2C1%2C">Pattern Discovery Algorithms for Classification.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/master-thesis-2010-pattern-discovery-algorithms-for-classification"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/master-thesis-2010-pattern-discovery-algorithms-for-classification">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">Tsinghua University, 2010.</span>
@@ -571,11 +581,11 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Qingyan Yang, Jianyong Wang.
-                                <span class="tag">(Demo)</span>
+                                <span class="tag">Demo</span>
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1871437.1871782">SEQUEL: Query Completion via Frequent Pattern Mining on Multi-Column Structural Data.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/cikm-2010-demo-sequel-query-completion-via-pattern-mining-on-multicolumn-structural-data"><i class="fa fa-slideshare"></i> Poster</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/cikm-2010-demo-sequel-query-completion-via-pattern-mining-on-multicolumn-structural-data">Poster</a>
                                 </span>
                                 <br>
                                 <span class="secondary">19th ACM Conference on Information and Knowledge Management, 2010.</span>
@@ -590,9 +600,9 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1835804.1835913">Direct Mining of Discriminative Patterns for Classifying Uncertain Data.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data"><i class="fa fa-slideshare"></i> Slides</a>]
-                                    [<a href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data-70432708"><i class="fa fa-slideshare"></i> Poster</a>]
-                                    [<a href="https://github.com/chuanconggao/uHarmony"><i class="fa fa-github"></i> Code</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data">Slides</a>
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data-70432708">Poster</a>
+                                    <a class="btn btn-default btn-xs" href="https://github.com/chuanconggao/uHarmony">Code</a>
                                 </span>
                                 <br>
                                 <span class="secondary">16th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2010.</span>
@@ -613,7 +623,7 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1645953.1646000">Efficient Itemset Generator Discovery Over a Stream Sliding Window.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/cikm-2009-efficient-itemset-generator-discovery-over-a-stream-sliding-window"><i class="fa fa-slideshare"></i> Slides</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/cikm-2009-efficient-itemset-generator-discovery-over-a-stream-sliding-window">Slides</a>
                                 </span>
                                 <br>
                                 <span class="secondary">18th ACM Conference on Information and Knowledge Management, 2009.</span>
@@ -631,18 +641,18 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Jianyong Wang, Yukai He, Lizhu Zhou.
-                                <span class="tag">(Technical Report)</span>
+                                <span class="tag">Technical Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft09.pdf">Efficient Sequence Generator Mining and its Application in Classification.</a></em>
                                 <br>
                                 <br>
                                 <br>
                                 <u>Chuancong Gao</u>, Jianyong Wang, Yukai He, Lizhu Zhou.
-                                <span class="tag">(<mark><i class="fa fa-trophy"></i> Best Poster <a href="http://wwwconference.org/www2008/program/program-posters.html" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark>)</span>
+                                <span class="tag"><mark><i class="fa fa-trophy"></i> Best Poster <a href="http://wwwconference.org/www2008/program/program-posters.html" style="text-decoration: none"><i class="fa fa-certificate"></i></a></mark></span>
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1367497.1367651">Efficient Mining of Frequent Sequence Generators.</a></em>
                                 <span class="tag">
-                                    [<a href="https://www.slideshare.net/ChuancongGao/www-2008-poster-efficient-mining-of-frequent-sequence-generators"><i class="fa fa-slideshare"></i> Poster</a>]
+                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/www-2008-poster-efficient-mining-of-frequent-sequence-generators">Poster</a>
                                 </span>
                                 <br>
                                 <span class="secondary">17th International Conference on World Wide Web, 2008.</span>
