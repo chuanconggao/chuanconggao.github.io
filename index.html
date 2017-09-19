@@ -19,12 +19,11 @@
         <script src="static/js/bootbox.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function() {
-                $(".avatar").on('animationiteration', function() {
-                    $(this).addClass("paused");
-                }).hover(function() {
-                    $(this).removeClass("paused");
-                });
+            $(document).ready(() => {
+                var avatar = $(".avatar");
+                avatar
+                    .on('animationiteration', () => avatar.addClass("paused"))
+                    .hover(() => avatar.removeClass("paused"));
 
                 $('.preview').click(function() {
                     var src = $(this).attr("src");
@@ -36,9 +35,7 @@
                     });
                 });
 
-                $("body").on("click", ".bootbox", function() {
-                    bootbox.hideAll();
-                });
+                $("body").on("click", ".bootbox", () => bootbox.hideAll());
 
                 $('[title]').tooltip({
                     container: 'body',
@@ -46,12 +43,12 @@
                 });
 
                 function checkSticky() {
-                    var e = $('.nav');
-                    if ($(window).scrollTop() >= e.offset().top) {
-                        e.addClass("sticky");
+                    var nav = $('.nav');
+                    if ($(window).scrollTop() >= nav.offset().top) {
+                        nav.addClass("sticky");
                         $("#backToTop").fadeIn();
                     } else {
-                        e.removeClass("sticky");
+                        nav.removeClass("sticky");
                         $("#backToTop").fadeOut();
                     }
                 }
@@ -59,8 +56,7 @@
                 checkSticky();
                 $(window).scroll(() => checkSticky());
 
-                $('.nav-tabs a').click(() => $(window).scrollTop(0));
-                $("#backToTop").click(() => $(window).scrollTop(0));
+                $('.nav-tabs a, #backToTop').click(() => $(window).scrollTop(0));
             });
         </script>
 
@@ -91,7 +87,6 @@
                 background-size: cover;
                 background-attachment: fixed;
 
-                display: block;
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -107,7 +102,7 @@
                 position: fixed;
                 margin: 10px;
                 right: 0px;
-                opacity: 0.5 !important;
+                opacity: .5 !important;
             }
 
             mark {
@@ -115,7 +110,7 @@
             }
 
             .tooltip {
-                opacity: 0.5 !important;
+                opacity: .5 !important;
             }
 
             .table-hover > tbody > tr.no-hover {
@@ -171,9 +166,6 @@
             }
             .nav-tabs.sticky {
                 background-color: rgba(43, 62, 80, 0.9);
-            }
-            .nav-tabs > li > a:hover {
-                transition: background .2s;
             }
             .nav-tabs > li.active > a {
                 color: rgba(255, 255, 255, .4) !important;
@@ -497,7 +489,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Xin Cao, Gao Cong, Man Lung Yiu, Xiaokui Xiao.
-                                <span class="tag">Technical Report</span>
+                                <span class="tag">Tech Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft12.pdf">Mining Discriminative Distance-Aware Patterns for Trajectory Prediction.</a></em>
                                 <br>
@@ -552,7 +544,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Jianyong Wang.
-                                <span class="tag">Technical Report</span>
+                                <span class="tag">Tech Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft10.pdf">Efficient Discovery of Periodic Patterns over Event Sequences.</a></em>
                                 <br>
@@ -641,7 +633,7 @@
                             </td>
                             <td>
                                 <u>Chuancong Gao</u>, Jianyong Wang, Yukai He, Lizhu Zhou.
-                                <span class="tag">Technical Report</span>
+                                <span class="tag">Tech Report</span>
                                 <br>
                                 <em><a class="text-info" href="papers/draft09.pdf">Efficient Sequence Generator Mining and its Application in Classification.</a></em>
                                 <br>
