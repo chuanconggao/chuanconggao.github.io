@@ -23,7 +23,9 @@
                 var avatar = $(".avatar");
                 avatar
                     .on('animationiteration', () => avatar.addClass("paused"))
-                    .hover(() => avatar.removeClass("paused"));
+                    .hover(() => avatar.removeClass("paused"), null);
+
+                $("#backgroundNote").hover(() => $("#background").toggleClass("reveal"));
 
                 $('.preview').click(function() {
                     var src = $(this).attr("src");
@@ -81,7 +83,7 @@
                 animation-play-state: running;
             }
 
-            .background {
+            #background {
                 background-image: url('https://source.unsplash.com/featured');
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -94,7 +96,11 @@
                 height: 100%;
                 z-index: -1;
 
+                transition: .8s;
                 filter: blur(5px) opacity(25%);
+            }
+            #background.reveal {
+                filter: none;
             }
 
             #backToTop {
@@ -102,7 +108,7 @@
                 position: fixed;
                 margin: 10px;
                 right: 0px;
-                transition: opacity .2s;
+                transition: .2s;
             }
             #backToTop:not(:hover) {
                 opacity: .5 !important;
@@ -145,7 +151,7 @@
             }
 
             a[role="tab"], .btn, tr {
-                transition: background .2s;
+                transition: .2s;
             }
 
             th, td {
@@ -165,7 +171,7 @@
 
             .nav-tabs {
                 z-index: 1000;
-                transition: background .4s;
+                transition: .4s;
             }
             .nav-tabs.sticky {
                 background-color: rgba(43, 62, 80, 0.9);
@@ -179,7 +185,7 @@
             }
 
             .preview {
-                transition: all .2s;
+                transition: .2s;
                 cursor: pointer;
             }
             .preview:hover {
@@ -195,8 +201,8 @@
         </style>
     </head>
     <body>
-        <div class="background"></div>
-        <span class="secondary" style="position: absolute; top: 0pt; right: 0pt"><small>
+        <div id="background"></div>
+        <span id="backgroundNote" class="secondary" style="position: absolute; top: 0pt; right: 0pt"><small>
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
         </small></span>
 
@@ -205,7 +211,7 @@
         <div class="container" style="max-width: 1000px">
             <br>
             <div class="block">
-                <h2 style="text-align:center;"><span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary">PhD Candidate</small></h2>
+                <h2 style="text-align:center;"><span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary"><span title="In Computing Science">PhD Candidate</span></small></h2>
             </div>
             <br>
             <table><tbody><tr>
