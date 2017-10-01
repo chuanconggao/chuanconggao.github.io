@@ -62,7 +62,11 @@
                 checkSticky();
                 $(window).scroll(() => checkSticky());
 
-                $('.nav-tabs a, #backToTop').click(() => $(window).scrollTop(0));
+                $('.nav-tabs a, #backToTop').click(() => window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                }));
             });
         </script>
 
