@@ -46,17 +46,22 @@
 
                 function checkSticky() {
                     var nav = $('.nav');
+                    var progress = $('.progress')
                     if ($(window).scrollTop() >= nav.offset().top) {
                         nav.addClass("sticky");
                         $("#backToTop").fadeIn();
+
+                        progress.addClass("stikcy").fadeIn();
                     } else {
                         nav.removeClass("sticky");
                         $("#backToTop").fadeOut();
+
+                        progress.removeClass("stikcy").fadeOut();
                     }
 
                     var h = document.documentElement, b = document.body;
                     var scroll = (h['scrollTop'] || b['scrollTop']) / ((h['scrollHeight'] || b['scrollHeight']) - h.clientHeight) * 100;
-                    $("#progressBar").css("width", `${scroll}%`);
+                    $(".progress > .progress-bar").css("width", `${scroll}%`);
                 }
 
                 checkSticky();
@@ -111,7 +116,8 @@
                 filter: none;
             }
 
-            #progress {
+            .progress {
+                display: none;
                 position: fixed;
                 width: 100%;
                 height: 5px;
@@ -222,8 +228,8 @@
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
         </small></span>
 
-        <div class="progress" id="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped" id="progressBar"></div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped"></div>
         </div>
 
         <button id="backToTop" class="btn btn-default" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
