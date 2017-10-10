@@ -1,1 +1,1 @@
-../bower_components/bootbox.js/bootbox.js
+../node_modules/bootbox/bootbox.js
