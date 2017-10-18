@@ -84,7 +84,7 @@
                     $(target + "SideNav").addClass('active');
                 });
 
-                $('.jump').click(function(e) {
+                $('.sidenav .list-group-item').click(function(e) {
                     e.preventDefault();
 
                     var url = $(this).attr('href');
@@ -161,6 +161,12 @@
             .sidenav {
                 display: none;
                 position: fixed;
+            }
+            .sidenav .list-group {
+                margin: 0px;
+            }
+            .sidenav .list-group-item {
+                background: none !important;
             }
 
             .container {
@@ -268,71 +274,23 @@
 
         <div class="sidenav tab-content">
             <div role="tabpanel" class="tab-pane active fade in" id="projectsSideNav">
-                <table class="table table-hover">
-                <tbody>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#projects_work"><span class="text-warning"><small>Work-related</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#projects_open"><span class="text-warning"><small>Open-Source</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#projects_misc"><span class="text-warning"><small>Miscellaneous</small></span></a>
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
+                <div class="list-group">
+                    <a class="list-group-item" href="#projects_work"><span class="text-warning"><small>Work-related</small></span></a>
+                    <a class="list-group-item" href="#projects_open"><span class="text-warning"><small>Open-Source</small></span></a>
+                    <a class="list-group-item" href="#projects_misc"><span class="text-warning"><small>Miscellaneous</small></span></a>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane fade in" id="publicationsSideNav">
-                <table class="table table-hover">
-                <tbody>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_pending"><span class="text-danger"><small>Pending</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2017"><span class="text-info"><small>2017</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2016"><span class="text-info"><small>2016</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2012"><span class="text-info"><small>2012</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2011"><span class="text-info"><small>2011</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2010"><span class="text-info"><small>2010</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2009"><span class="text-info"><small>2009</small></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="jump" href="#publications_2008"><span class="text-info"><small>2008</small></span></a>
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
+                <div class="list-group">
+                    <a class="list-group-item" href="#publications_pending"><span class="text-danger"><small>Pending</small></span></a>
+                    <a class="list-group-item" href="#publications_2017"><span class="text-info"><small>2017</small></span></a>
+                    <a class="list-group-item" href="#publications_2016"><span class="text-info"><small>2016</small></span></a>
+                    <a class="list-group-item" href="#publications_2012"><span class="text-info"><small>2012</small></span></a>
+                    <a class="list-group-item" href="#publications_2011"><span class="text-info"><small>2011</small></span></a>
+                    <a class="list-group-item" href="#publications_2010"><span class="text-info"><small>2010</small></span></a>
+                    <a class="list-group-item" href="#publications_2009"><span class="text-info"><small>2009</small></span></a>
+                    <a class="list-group-item" href="#publications_2008"><span class="text-info"><small>2008</small></span></a>
+                </div>
             </div>
         </div>
 
@@ -391,7 +349,7 @@
                     <tbody>
                         <tr class="no-hover">
                             <td width="125">
-                                <a name="projects_work"/>
+                                <a name="projects_work"></a>
                                 <span class="text-warning">Work-related</span>
                             </td>
                             <td width="200"></td>
@@ -459,7 +417,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td width="125">
-                                <a name="projects_open"/>
+                                <a name="projects_open"></a>
                                 <span class="text-warning">Open-Source</span>
                             </td>
                             <td></td>
@@ -498,7 +456,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="projects_misc"/>
+                                <a name="projects_misc"></a>
                                 <span class="text-warning">Miscellaneous</span>
                             </td>
                             <td></td>
@@ -563,7 +521,7 @@
                     <tbody>
                         <tr class="no-hover">
                             <td width="100">
-                                <a name="publications_pending"/>
+                                <a name="publications_pending"></a>
                                 <span class="text-danger">Pending</span>
                             </td>
                             <td></td>
@@ -605,7 +563,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2017"/>
+                                <a name="publications_2017"></a>
                                 <span class="text-info">2017</span>
                             </td>
                             <td></td>
@@ -644,7 +602,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2016"/>
+                                <a name="publications_2016"></a>
                                 <span class="text-info">2016</span>
                             </td>
                             <td></td>
@@ -663,7 +621,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2012"/>
+                                <a name="publications_2012"></a>
                                 <span class="text-info">2012</span>
                             </td>
                             <td></td>
@@ -698,7 +656,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2011"/>
+                                <a name="publications_2011"></a>
                                 <span class="text-info">2011</span>
                             </td>
                             <td></td>
@@ -720,7 +678,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2010"/>
+                                <a name="publications_2010"></a>
                                 <span class="text-info">2010</span>
                             </td>
                             <td></td>
@@ -789,7 +747,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2009"/>
+                                <a name="publications_2009"></a>
                                 <span class="text-info">2009</span>
                             </td>
                             <td></td>
@@ -811,7 +769,7 @@
                         </tr>
                         <tr class="no-hover">
                             <td>
-                                <a name="publications_2008"/>
+                                <a name="publications_2008"></a>
                                 <span class="text-info">2008</span>
                             </td>
                             <td></td>
