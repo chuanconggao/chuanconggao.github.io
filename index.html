@@ -68,8 +68,8 @@
 
                 function checkSideNav() {
                     $('.sidenav')
-                        .css("top", $('.nav-tabs').offset().top + $('.nav-tabs').height())
-                        .css("left", $('.container').offset().left + $('.container').width() - 1);
+                        .css("top", $('#content').offset().top)
+                        .css("left", $('#content').offset().left + $('#content').width() - 1);
                 }
 
                 checkSticky();
@@ -194,10 +194,6 @@
                 background-color: inherit !important;
             }
 
-            .block {
-                margin: 10px;
-            }
-
             .tag {
                 float: right;
             }
@@ -305,26 +301,24 @@
 
         <div class="container" style="max-width: 1000px">
             <br>
-            <div class="block">
-                <h2 style="text-align: center;"><span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary"><span title="In Computing Science">PhD Candidate</span></small></h2>
-            </div>
+            <h2 style="text-align: center">
+                <span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary"><span title="In Computing Science">PhD Candidate</span></small>
+            </h2>
             <br>
             <table><tbody><tr>
-                <td width="100">
+                <td>
                     <img class="avatar paused" src="img/chuancong.jpg" width="100">
                 </td>
-                <td width="100%">
-                    <div class="block">
-                        Hello. I am a PhD candidate in computing science at <a href="http://www.sfu.ca">Simon Fraser University</a>.
-                        I am expected to graduate in 2017.
-                        <br>
-                        <br>
-                        <img src="img/email.png">
-                        <span class="tag">
-                            <a class="btn btn-default btn-sm" href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>
-                            <a class="btn btn-default btn-sm" href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>
-                        </span>
-                    </div>
+                <td width="100%" style="padding-left: 10px">
+                    Hello. I am a PhD candidate in computing science at <a href="http://www.sfu.ca">Simon Fraser University</a>.
+                    I am expected to graduate in 2017.
+                    <br>
+                    <br>
+                    <img src="img/email.png">
+                    <span class="tag">
+                        <a class="btn btn-default btn-sm" href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>
+                        <a class="btn btn-default btn-sm" href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>
+                    </span>
                 </td>
             </tr></tbody></table>
             <br>
@@ -335,7 +329,7 @@
                 <li role="presentation"><a href="#education" aria-controls="education" role="tab" data-toggle="tab"><i class="fa fa-graduation-cap"></i> Education</a></li>
                 <li role="presentation"><a href="#teaching" aria-controls="teaching" role="tab" data-toggle="tab"><i class="fa fa-university"></i> Teaching &amp; Mentoring</a></li>
             </ul>
-            <div class="tab-content">
+            <div class="tab-content" id="content">
                 <div role="tabpanel" class="table-responsive tab-pane active fade in" id="projects">
                     <table class="table table-hover">
                     <tbody>
@@ -357,7 +351,7 @@
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
-                            <td width="125">
+                            <td>
                                 <a name="projects_work"></a>
                                 <span class="text-warning">Work-related</span>
                             </td>
@@ -425,7 +419,7 @@
                             </td>
                         </tr>
                         <tr class="no-hover">
-                            <td width="125">
+                            <td>
                                 <a name="projects_open"></a>
                                 <span class="text-warning">Open-Source</span>
                             </td>
@@ -920,7 +914,7 @@
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
-                            <td width="100px">
+                            <td width="100">
                                 <span class="text-danger">2013 - Now</span>
                             </td>
                             <td></td>
@@ -1068,7 +1062,7 @@
                     </table>
                 </div>
             </div>
-            <div class="block">
+            <div style="text-align: right">
                 <span class="secondary"><small>Copyright © Chuancong Gao</small></span>
             </div>
         </div>
