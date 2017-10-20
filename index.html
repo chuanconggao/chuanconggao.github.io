@@ -20,8 +20,8 @@
 
         <script type="text/javascript">
             $(document).ready(() => {
-                var avatar = $(".avatar");
-                avatar
+                var avatar = $(".avatar, .shadow");
+                $(".avatar")
                     .on('animationiteration', () => avatar.addClass("paused"))
                     .hover(() => avatar.removeClass("paused"), null);
 
@@ -114,9 +114,17 @@
                 }
             }
 
+            .shadow {
+                transition: .8s;
+                filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+            }
+            .shadow.paused {
+                filter: none;
+            }
             .avatar {
+                transition: .8s;
                 border-radius: 50%;
-                animation: spin 2s infinite;
+                animation: spin 2.4s infinite;
             }
             .avatar.paused {
                 animation-play-state: paused;
@@ -254,7 +262,7 @@
                 cursor: pointer;
             }
             .preview:hover {
-                filter: opacity(75%);
+                filter: opacity(75%) drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
             }
 
             .bootbox img {
@@ -307,7 +315,9 @@
             <br>
             <table><tbody><tr>
                 <td>
-                    <img class="avatar paused" src="img/chuancong.jpg" width="100">
+                    <div class="shadow paused">
+                        <img class="avatar paused" src="img/chuancong.jpg" width="100">
+                    </div>
                 </td>
                 <td width="100%" style="padding-left: 10px">
                     Hello. I am a PhD candidate in computing science at <a href="http://www.sfu.ca">Simon Fraser University</a>.
