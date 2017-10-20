@@ -21,9 +21,19 @@
         <script type="text/javascript">
             $(document).ready(() => {
                 var avatar = $(".avatar, .shadow");
+                var enteredAvater = false;
                 $(".avatar")
-                    .on('animationiteration', () => avatar.addClass("paused"))
-                    .hover(() => avatar.removeClass("paused"), null);
+                    .on('animationiteration', () => {
+                        if (!enteredAvater) {
+                            avatar.addClass("paused");
+                        }
+                    })
+                    .hover(() => {
+                        enteredAvater = true;
+                        avatar.removeClass("paused");
+                    }, () => {
+                        enteredAvater = false;
+                    });
 
                 $("#backgroundNote").hover(() => $("#background").toggleClass("reveal"));
 
@@ -125,12 +135,10 @@
                 transition: .8s;
                 border-radius: 50%;
                 animation: spin 2.4s infinite;
+                animation-play-state: running;
             }
             .avatar.paused {
                 animation-play-state: paused;
-            }
-            .avatar:hover {
-                animation-play-state: running;
             }
 
             #background {
