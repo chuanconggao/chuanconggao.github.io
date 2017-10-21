@@ -134,11 +134,13 @@
             .avatar {
                 transition: .8s;
                 border-radius: 50%;
-                animation: spin 2.4s infinite;
+                animation: spin 1.6s linear infinite;
                 animation-play-state: running;
+                cursor: progress;
             }
             .avatar.paused {
                 animation-play-state: paused;
+                cursor: default;
             }
 
             #background {
