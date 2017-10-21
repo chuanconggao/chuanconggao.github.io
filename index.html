@@ -18,6 +18,8 @@
 
         <script src="static/js/bootbox.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="static/css/animate.min.css">
+
         <script type="text/javascript">
             $(document).ready(() => {
                 var avatar = $(".avatar, .shadow");
@@ -34,6 +36,16 @@
                     }, () => {
                         enteredAvater = false;
                     });
+
+                $('.double-content').mouseenter(function() {
+                    $(this).removeClass("fadeInDown").addClass("fadeOutUp");
+                    $(this).siblings('.double-alt').removeClass("fadeOutDown").addClass("fadeInUp");
+                });
+                $('.double').mouseleave(function() {
+                    $(this).children('.double-content').removeClass("fadeOutUp").addClass("fadeInDown");
+                    $(this).children('.double-alt').removeClass("fadeInUp").addClass("fadeOutDown");
+                });
+                $('.double').trigger("mouseleave");
 
                 $("#backgroundNote").hover(() => $("#background").toggleClass("reveal"));
 
@@ -119,32 +131,15 @@
                 display: inline-block;
                 position: relative;
             }
-            .double:before {
+            .double-alt, .double-content {
                 display: inline-block;
+
+                transition: .8s;
+            }
+            .double-alt {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-
-                content: attr(data-hover);
-
-                transition: .8s;
-                opacity: 0;
-                transform: translateY(67%) scale(.67);
-            }
-            .double:hover:before {
-                opacity: 1;
-                transform: translateY(0%) scale(1);
-            }
-            .double > .double-content {
-                display: inline-block;
-
-                transition: .8s;
-                opacity: 1;
-                transform: translateY(0%) scale(1);
-            }
-            .double:hover > .double-content {
-                opacity: 0;
-                transform: translateY(-67%) scale(.67);
             }
 
             @keyframes spin {
@@ -352,7 +347,7 @@
         <div class="container" style="max-width: 1000px">
             <br>
             <h2 style="text-align: center">
-                <span class="double" data-hover="传聪"><span class="double-content" >Chuancong</span></span> <span class="double" data-hover="高"><span class="double-content">Gao</span></span> <small class="secondary"><span>PhD Candidate</span></small>
+                <span class="double"><span class="animated double-alt">传聪</span><span class="animated double-content" >Chuancong</span></span> <span class="double"><span class="animated double-alt">高</span><span class="animated double-content">Gao</span></span> <small class="secondary"><span>PhD Candidate</span></small>
             </h2>
             <br>
             <table><tbody><tr>
