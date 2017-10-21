@@ -115,6 +115,38 @@
         </script>
 
         <style>
+            .double {
+                display: inline-block;
+                position: relative;
+            }
+            .double:before {
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                content: attr(data-hover);
+
+                transition: .8s;
+                opacity: 0;
+                transform: translateY(67%) scale(.67);
+            }
+            .double:hover:before {
+                opacity: 1;
+                transform: translateY(0%) scale(1);
+            }
+            .double > .double-content {
+                display: inline-block;
+
+                transition: .8s;
+                opacity: 1;
+                transform: translateY(0%) scale(1);
+            }
+            .double:hover > .double-content {
+                opacity: 0;
+                transform: translateY(-67%) scale(.67);
+            }
+
             @keyframes spin {
                 from {
                     transform: rotate(0deg);
@@ -320,7 +352,7 @@
         <div class="container" style="max-width: 1000px">
             <br>
             <h2 style="text-align: center">
-                <span title="传聪">Chuancong</span> <span title="高">Gao</span> <small class="secondary"><span title="In Computing Science">PhD Candidate</span></small>
+                <span class="double" data-hover="传聪"><span class="double-content" >Chuancong</span></span> <span class="double" data-hover="高"><span class="double-content">Gao</span></span> <small class="secondary"><span>PhD Candidate</span></small>
             </h2>
             <br>
             <table><tbody><tr>
