@@ -27,12 +27,16 @@
                 avatar
                     .on('animationiteration', () => {
                         if (!enteredAvater) {
-                            avatar.addClass("paused");
+                            avatar.removeClass("cool");
+                            $('.double').removeClass("cool");
+                            $(document.body).removeClass("cool");
                         }
                     })
                     .hover(() => {
                         enteredAvater = true;
-                        avatar.removeClass("paused");
+                        avatar.addClass("cool");
+                        $('.double').addClass("cool");
+                        $(document.body).addClass("cool");
                     }, () => {
                         enteredAvater = false;
                     });
@@ -131,6 +135,9 @@
                 display: inline-block;
                 position: relative;
             }
+            .double.cool {
+                text-shadow: 0 0 5px #228DFF, 0 0 10px #ffffff, 0 0 15px #228DFF, 0 0 20px #ffffff, 0 0 25px #228DFF;
+            }
             .double-alt, .double-content {
                 display: inline-block;
                 transition: .8s;
@@ -155,12 +162,14 @@
 
                 transition: .8s;
                 animation: spin 1.6s linear infinite;
-                animation-play-state: running;
-                cursor: url(/img/chuancong.gif), default;
-            }
-            .avatar.paused {
                 animation-play-state: paused;
-                cursor: default;
+            }
+            .avatar.cool {
+                animation-play-state: running;
+            }
+
+            body.cool, body.cool * {
+                cursor: url(/img/chuancong.gif), default !important;
             }
 
             #background {
@@ -355,7 +364,7 @@
             <br>
             <table><tbody><tr>
                 <td>
-                    <img class="avatar paused" src="img/chuancong.jpg" width="100">
+                    <img class="avatar" src="img/chuancong.jpg" width="100">
                 </td>
                 <td width="100%" style="padding-left: 10px">
                     Hello. I am a PhD candidate in computing science at <a href="http://www.sfu.ca">Simon Fraser University</a>.
