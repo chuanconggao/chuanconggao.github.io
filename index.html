@@ -71,12 +71,12 @@
                     var progress = $('.progress')
                     if ($(window).scrollTop() >= nav.offset().top) {
                         nav.addClass("sticky");
-                        $("#backToTop").fadeIn();
+                        $("#backToTop").addClass("sticky");
 
                         progress.addClass("stikcy").fadeIn();
                     } else {
                         nav.removeClass("sticky");
-                        $("#backToTop").fadeOut();
+                        $("#backToTop").removeClass("sticky");
 
                         progress.removeClass("stikcy").fadeOut();
                     }
@@ -193,14 +193,20 @@
             }
 
             #backToTop {
-                display: none;
                 position: fixed;
                 margin: 10px;
                 right: 0px;
-                transition: .2s;
+                transition: .8s;
+                opacity: 0;
             }
-            #backToTop:not(:hover) {
-                opacity: .5 !important;
+            #backToTop.sticky {
+                opacity: 1;
+            }
+            #backToTop > button {
+                opacity: 0.5;
+            }
+            #backToTop > button:hover, #backToTop > button:active {
+                opacity: 1;
             }
 
             .sidenav {
@@ -253,7 +259,7 @@
             }
 
             a[role="tab"], .btn, tr {
-                transition: .2s;
+                transition: .4s;
             }
 
             th, td {
@@ -273,7 +279,7 @@
 
             .nav-tabs {
                 z-index: 1000;
-                transition: .4s;
+                transition: .8s;
                 border-bottom: 0px;
             }
             .nav-tabs.sticky {
@@ -288,7 +294,7 @@
             }
 
             .preview {
-                transition: .2s;
+                transition: .4s;
                 cursor: pointer;
             }
             .preview:hover {
@@ -313,7 +319,9 @@
             <div class="progress-bar progress-bar-success progress-bar-striped"></div>
         </div>
 
-        <button id="backToTop" class="btn btn-default" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
+        <div id="backToTop">
+            <button class="btn btn-default" title="Go to Top" tabindex="-1"><i class="fa fa-arrow-up"></i></button>
+        </div>
 
         <div class="sidenav tab-content">
             <div role="tabpanel" class="tab-pane active fade in" id="projectsSideNav">
