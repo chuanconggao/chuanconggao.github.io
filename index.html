@@ -38,8 +38,8 @@
                     });
 
                 $('.double-content').mouseenter(function() {
-                    $(this).removeClass("fadeInDown").addClass("fadeOutUp");
-                    $(this).siblings('.double-alt').removeClass("fadeOutDown").addClass("fadeInUp");
+                    $(this).toggleClass("fadeInDown fadeOutUp");
+                    $(this).siblings('.double-alt').toggleClass("fadeOutDown fadeInUp");
                 });
                 $('.double').mouseleave(function() {
                     $(this).children('.double-content').removeClass("fadeOutUp").addClass("fadeInDown");
@@ -97,8 +97,8 @@
                 checkSticky();
                 checkSideNav();
                 $(window)
-                    .scroll(() => checkSticky())
-                    .resize(() => checkSideNav());
+                    .scroll(checkSticky)
+                    .resize(checkSideNav);
 
                 $('.nav-tabs a, #backToTop').click(() => window.scrollTo({
                     top: 0,
@@ -133,7 +133,6 @@
             }
             .double-alt, .double-content {
                 display: inline-block;
-
                 transition: .8s;
             }
             .double-alt {
@@ -159,8 +158,9 @@
                 filter: none;
             }
             .avatar {
-                transition: .8s;
                 border-radius: 50%;
+
+                transition: .8s;
                 animation: spin 1.6s linear infinite;
                 animation-play-state: running;
                 cursor: url(/img/chuancong.gif), default;
