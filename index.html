@@ -22,9 +22,9 @@
 
         <script type="text/javascript">
             $(document).ready(() => {
-                var avatar = $(".avatar, .shadow");
+                var avatar = $(".avatar");
                 var enteredAvater = false;
-                $(".avatar")
+                avatar
                     .on('animationiteration', () => {
                         if (!enteredAvater) {
                             avatar.addClass("paused");
@@ -150,13 +150,6 @@
                 }
             }
 
-            .shadow {
-                transition: .8s;
-                filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-            }
-            .shadow.paused {
-                filter: none;
-            }
             .avatar {
                 border-radius: 50%;
 
@@ -347,14 +340,14 @@
         <div class="container" style="max-width: 1000px">
             <br>
             <h2 style="text-align: center">
-                <span class="double"><span class="animated double-alt">传聪</span><span class="animated double-content" >Chuancong</span></span> <span class="double"><span class="animated double-alt">高</span><span class="animated double-content">Gao</span></span> <small class="secondary"><span>PhD Candidate</span></small>
+                <span class="double"><span class="animated double-alt">传聪</span><span class="animated double-content">Chuancong</span></span>
+                <span class="double"><span class="animated double-alt">高</span><span class="animated double-content">Gao</span></span>
+                <small class="secondary"><span>PhD Candidate</span></small>
             </h2>
             <br>
             <table><tbody><tr>
                 <td>
-                    <div class="shadow paused">
-                        <img class="avatar paused" src="img/chuancong.jpg" width="100">
-                    </div>
+                    <img class="avatar paused" src="img/chuancong.jpg" width="100">
                 </td>
                 <td width="100%" style="padding-left: 10px">
                     Hello. I am a PhD candidate in computing science at <a href="http://www.sfu.ca">Simon Fraser University</a>.
