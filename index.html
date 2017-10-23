@@ -22,49 +22,12 @@
 
         <script type="text/javascript">
             $(document).ready(() => {
-                var coolObjs = $(".avatar, .avatar-shadow, .double, body, #stars");
-                var enteredAvater = false;
-                $('.avatar')
-                    .on('animationiteration', () => {
-                        if (!enteredAvater) {
-                            coolObjs.removeClass("cool");
-                        }
-                    })
-                    .hover(() => {
-                        enteredAvater = true;
-                        coolObjs.addClass("cool");
-                    }, () => {
-                        enteredAvater = false;
-                    });
-
-                $('.double-content').mouseenter(function() {
-                    $(this).toggleClass("fadeInDown fadeOutUp");
-                    $(this).siblings('.double-alt').toggleClass("fadeOutDown fadeInUp");
-                });
-                $('.double').mouseleave(function() {
-                    $(this).children('.double-content').removeClass("fadeOutUp").addClass("fadeInDown");
-                    $(this).children('.double-alt').removeClass("fadeInUp").addClass("fadeOutDown");
-                });
-                $('.double').trigger("mouseleave");
-
-                $("#backgroundNote").hover(() => $("#background").toggleClass("reveal"));
-
-                $('.preview').click(function() {
-                    var src = $(this).attr("src");
-                    bootbox.dialog({
-                        message: `<img src=${src}>`,
-                        onEscape: true,
-                        backdrop: true,
-                        closeButton: false
-                    });
-                });
-
-                $("body").on("click", ".bootbox", () => bootbox.hideAll());
-
-                $('[title]').tooltip({
-                    container: 'body',
-                    placement: 'bottom'
-                });
+                function checkSideNav() {
+                    $('.sidenav')
+                        .css("top", $('#content').offset().top)
+                        .css("left", $('#content').offset().left + $('#content').width() - 1)
+                        .show();
+                }
 
                 function checkSticky() {
                     var nav = $('.nav');
@@ -84,19 +47,11 @@
                     var h = document.documentElement, b = document.body;
                     var scroll = (h['scrollTop'] || b['scrollTop']) / ((h['scrollHeight'] || b['scrollHeight']) - h.clientHeight) * 100;
                     $(".progress > .progress-bar").css("width", `${scroll}%`);
-
-                    ;
-                }
-
-                function checkSideNav() {
-                    $('.sidenav')
-                        .css("top", $('#content').offset().top)
-                        .css("left", $('#content').offset().left + $('#content').width() - 1);
                 }
 
                 var starsHeight = 0;
                 var starsWidth = 0;
-                
+
                 function addStars() {
                     if ($(window).height() <= starsHeight && $(window).width() <= starsWidth) {
                         return;
@@ -107,7 +62,8 @@
 
                     var stars = $('#stars');
                     stars.empty();
-                    for(var i = 0; i < 100; i++){
+                    var numStars = 25 + 50 * Math.random();
+                    for(var i = 0; i < numStars; i++){
                         var scale = 0.5 + Math.random();
                         var x = starsWidth * Math.random();
                         var y = starsHeight * Math.random();
@@ -122,15 +78,15 @@
                     }
                 }
 
-                checkSticky();
                 checkSideNav();
+                checkSticky();
                 addStars();
                 $(window)
-                    .scroll(checkSticky)
                     .resize(() => {
                         checkSideNav();
                         addStars();
-                    });
+                    })
+                    .scroll(checkSticky);
 
                 $('.nav-tabs a, #backToTop').click(() => window.scrollTo({
                     top: 0,
@@ -142,7 +98,7 @@
                     $('.sidenav > .tab-pane').removeClass('active');
 
                     var target = $(e.target).attr('href');
-                    $(target + "SideNav").addClass('active');
+                    $(target + "SideNav").addClass('active in');
                 });
 
                 $('.sidenav .list-group-item').click(function(e) {
@@ -155,6 +111,50 @@
                         behavior: 'smooth'
                     });
                 });
+
+                $('.double-content').mouseenter(function() {
+                    $(this).toggleClass("fadeInDown fadeOutUp");
+                    $(this).siblings('.double-alt').toggleClass("fadeOutDown fadeInUp");
+                });
+                $('.double').mouseleave(function() {
+                    $(this).children('.double-content').removeClass("fadeOutUp").addClass("fadeInDown");
+                    $(this).children('.double-alt').removeClass("fadeInUp").addClass("fadeOutDown");
+                });
+                $('.double').trigger("mouseleave");
+
+                $('.preview').click(function() {
+                    var src = $(this).attr("src");
+                    bootbox.dialog({
+                        message: `<img src=${src}>`,
+                        onEscape: true,
+                        backdrop: true,
+                        closeButton: false
+                    });
+                });
+
+                $("body").on("click", ".bootbox", () => bootbox.hideAll());
+
+                $('[title]').tooltip({
+                    container: 'body',
+                    placement: 'bottom'
+                });
+
+                var coolObjs = $(".avatar, .avatar-shadow, .double, body, #stars");
+                var enteredAvater = false;
+                $('.avatar')
+                    .on('animationiteration', () => {
+                        if (!enteredAvater) {
+                            coolObjs.removeClass("cool");
+                        }
+                    })
+                    .hover(() => {
+                        enteredAvater = true;
+                        coolObjs.addClass("cool");
+                    }, () => {
+                        enteredAvater = false;
+                    });
+
+                $("#backgroundNote").hover(() => $("#background").toggleClass("reveal"));
             });
         </script>
 
@@ -172,6 +172,8 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
+
+                opacity: 0;
             }
 
             @keyframes spin {
@@ -277,6 +279,7 @@
             }
 
             .sidenav {
+                display: none;
                 position: fixed;
             }
             .sidenav .tab-pane {
@@ -399,7 +402,7 @@
                     <a class="list-group-item" href="#projects_misc"><span class="text-warning"><small>Miscellaneous</small></span></a>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade in" id="publicationsSideNav">
+            <div role="tabpanel" class="tab-pane fade" id="publicationsSideNav">
                 <div class="list-group">
                     <a class="list-group-item" href="#publications_pending"><span class="text-danger"><small>Pending</small></span></a>
                     <a class="list-group-item" href="#publications_2017"><span class="text-info"><small>2017</small></span></a>
