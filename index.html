@@ -94,17 +94,29 @@
                         .css("left", $('#content').offset().left + $('#content').width() - 1);
                 }
 
+                var starsHeight = 0;
+                var starsWidth = 0;
+                
                 function addStars() {
+                    if ($(window).height() <= starsHeight && $(window).width() <= starsWidth) {
+                        return;
+                    }
+
+                    starsHeight = Math.max($(window).height(), starsHeight);
+                    starsWidth = Math.max($(window).width(), starsWidth);
+
                     var stars = $('#stars');
                     stars.empty();
                     for(var i = 0; i < 100; i++){
                         var scale = 0.5 + Math.random();
-                        var x = $(window).width() * Math.random();
-                        var y = $(window).height() * Math.random();
+                        var x = starsWidth * Math.random();
+                        var y = starsHeight * Math.random();
 
                         var star = $("<div/>");
                         star.addClass("star").css({
-                            transform: `translate(${x}px, ${y}px) scale(${scale})`
+                            left: `${x}px`,
+                            top: `${y}px`,
+                            transform: `scale(${scale})`
                         });
                         stars.append(star);
                     }
