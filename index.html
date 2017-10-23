@@ -22,17 +22,17 @@
 
         <script type="text/javascript">
             $(document).ready(() => {
-                var avatar = $(".avatar, .avatar-shadow, .double, body");
+                var coolObjs = $(".avatar, .avatar-shadow, .double, body, #stars");
                 var enteredAvater = false;
                 $('.avatar')
                     .on('animationiteration', () => {
                         if (!enteredAvater) {
-                            avatar.removeClass("cool");
+                            coolObjs.removeClass("cool");
                         }
                     })
                     .hover(() => {
                         enteredAvater = true;
-                        avatar.addClass("cool");
+                        coolObjs.addClass("cool");
                     }, () => {
                         enteredAvater = false;
                     });
@@ -94,11 +94,31 @@
                         .css("left", $('#content').offset().left + $('#content').width() - 1);
                 }
 
+                function addStars() {
+                    var stars = $('#stars');
+                    stars.empty();
+                    for(var i = 0; i < 100; i++){
+                        var scale = 0.5 + Math.random();
+                        var x = $(window).width() * Math.random();
+                        var y = $(window).height() * Math.random();
+
+                        var star = $("<div/>");
+                        star.addClass("star").css({
+                            transform: `translate(${x}px, ${y}px) scale(${scale})`
+                        });
+                        stars.append(star);
+                    }
+                }
+
                 checkSticky();
                 checkSideNav();
+                addStars();
                 $(window)
                     .scroll(checkSticky)
-                    .resize(checkSideNav);
+                    .resize(() => {
+                        checkSideNav();
+                        addStars();
+                    });
 
                 $('.nav-tabs a, #backToTop').click(() => window.scrollTo({
                     top: 0,
@@ -164,7 +184,8 @@
             .avatar-shadow {
                 transition: .8s;
             }
-            .double.cool, .avatar-shadow.cool {
+
+            .double.cool, .avatar-shadow.cool, .star {
                 filter: drop-shadow(0 0 2px #228DFF) drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 8px #228DFF);
             }
 
@@ -183,13 +204,42 @@
                 right: 0;
                 width: 100%;
                 height: 100%;
-                z-index: -1;
+                z-index: -2;
 
                 transition: .8s;
                 filter: blur(5px) opacity(25%);
             }
             #background.reveal {
                 filter: none;
+            }
+
+            #stars {
+                position: fixed;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+
+                transition: .8s;
+            }
+            #stars.cool {
+            }
+            .star{
+                position: absolute;
+                height: 2px;
+                width: 2px;
+                border-radius: 50%;
+
+                transition: .8s;
+                background: white;
+            }
+            #stars.cool > .star {
+                height: 4px;
+                width: 4px;
+
+                margin-top: -1px;
+                margin-left: -1px;
             }
 
             .progress {
@@ -316,6 +366,7 @@
     </head>
     <body>
         <div id="background"></div>
+        <div id="stars"></div>
         <span id="backgroundNote" class="secondary" style="position: absolute; top: 0pt; right: 0pt"><small>
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
         </small></span>
@@ -325,7 +376,7 @@
         </div>
 
         <div id="backToTop">
-            <button class="btn btn-default" title="Go to Top" tabindex="-1"><i class="fa fa-arrow-up"></i></button>
+            <button class="btn btn-default" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
         </div>
 
         <div class="sidenav tab-content">
