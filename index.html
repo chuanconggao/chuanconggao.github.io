@@ -49,44 +49,26 @@
                     $(".progress > .progress-bar").css("width", `${scroll}%`);
                 }
 
-                var starsHeight = 0;
-                var starsWidth = 0;
+                var stars = $('#stars');
+                var numStars = 25 + 50 * Math.random();
+                for(var i = 0; i < numStars; i++){
+                    var scale = 0.5 + Math.random();
+                    var x = Math.random() * 100;
+                    var y = Math.random() * 100;
 
-                function addStars() {
-                    if ($(window).height() <= starsHeight && $(window).width() <= starsWidth) {
-                        return;
-                    }
+                    var star = $("<div/>");
+                    star.addClass("star").css({
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: `scale(${scale})`
+                    });
 
-                    starsHeight = Math.max($(window).height(), starsHeight);
-                    starsWidth = Math.max($(window).width(), starsWidth);
-
-                    var stars = $('#stars');
-                    stars.empty();
-                    var numStars = 25 + 50 * Math.random();
-                    for(var i = 0; i < numStars; i++){
-                        var scale = 0.5 + Math.random();
-                        var x = starsWidth * Math.random();
-                        var y = starsHeight * Math.random();
-
-                        var star = $("<div/>");
-                        star.addClass("star").css({
-                            left: `${x}px`,
-                            top: `${y}px`,
-                            transform: `scale(${scale})`
-                        });
-                        stars.append(star);
-                    }
+                    stars.append(star);
                 }
 
                 checkSideNav();
                 checkSticky();
-                addStars();
-                $(window)
-                    .resize(() => {
-                        checkSideNav();
-                        addStars();
-                    })
-                    .scroll(checkSticky);
+                $(window).resize(checkSideNav).scroll(checkSticky);
 
                 $('.nav-tabs a, #backToTop').click(() => window.scrollTo({
                     top: 0,
@@ -229,8 +211,6 @@
 
             #stars {
                 position: fixed;
-                left: 0;
-                right: 0;
                 width: 100%;
                 height: 100%;
                 z-index: -1;
