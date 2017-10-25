@@ -32,7 +32,6 @@ a {
     text-decoration: none !important; }
 
 .tooltip {
-  transition: .4s;
   opacity: .5 !important; }
 
 .tag {
