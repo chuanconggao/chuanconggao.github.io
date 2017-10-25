@@ -1,0 +1,238 @@
+.container {
+    padding: 0;
+}
+
+table {
+    font-size: 1em !important;
+
+    th,
+    td {
+        white-space: normal !important;
+    }
+}
+
+.table,
+.list-group,
+.progress {
+    margin: 0;
+}
+
+.table-hover > tbody > tr {
+    transition: .4s;
+
+    &.no-hover {
+        background-color: inherit !important;
+    }
+}
+
+mark {
+    padding: .1em;
+}
+
+.secondary {
+    color: rgba(255, 255, 255, .4);
+}
+
+a {
+    color: #df691a !important;
+
+    &[role="tab"],
+    &.list-group-item,
+    &.btn {
+        color: #fff !important;
+
+        transition: .4s;
+    }
+
+    &:not(:hover):not(:focus) {
+        text-decoration: none !important;
+    }
+}
+
+.tooltip {
+    transition: .4s;
+    opacity: .5 !important;
+}
+
+.tag {
+    float: right;
+}
+
+.tab-content {
+    background-color: rgba(43, 62, 80, .6);
+
+    > .tab-pane {
+        border: 1px solid #4e5d6c;
+
+        transition: .4s;
+    }
+}
+
+.nav-tabs {
+    z-index: 100;
+    border-bottom: 0;
+
+    transition: .8s;
+
+    > li.active > a {
+        color: rgba(255, 255, 255, .4) !important;
+        background-color: rgba(43, 62, 80, .6) !important;
+    }
+
+    &.sticky {
+        background-color: rgba(43, 62, 80, .9);
+    }
+}
+
+.sidenav {
+    display: none;
+    position: fixed;
+
+    > .tab-pane {
+        border-left: 0;
+
+        .list-group-item {
+            background: none !important;
+        }
+    }
+}
+
+.double {
+    display: inline-block;
+    position: relative;
+    transition: .8s;
+
+    .double-content {
+        display: inline-block;
+        transition: .8s;
+    }
+
+    .double-alt {
+        @extend .double-content;
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+    }
+}
+
+.avatar-shadow {
+    transition: .8s;
+
+    .avatar {
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        border-radius: 50%;
+
+        transition: .8s;
+        animation: spin 1.6s linear infinite;
+        animation-play-state: paused;
+
+        &.cool {
+            animation-play-state: running;
+        }
+    }
+}
+
+.star {
+    position: fixed;
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    z-index: -1;
+
+    transition: .8s;
+    background: #fff;
+
+    &.cool {
+        height: 4px;
+        width: 4px;
+
+        margin-top: -1px;
+        margin-left: -1px;
+    }
+}
+
+.double.cool,
+.avatar-shadow.cool,
+.star {
+    filter: drop-shadow(0 0 2px #228dff) drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #228dff);
+}
+
+body.cool,
+body.cool * {
+    cursor: url('/img/chuancong.gif'), default !important;
+}
+
+#background {
+    background-image: url('https://source.unsplash.com/featured');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    transition: .8s;
+    filter: blur(5px) opacity(25%);
+
+    &.reveal {
+        filter: none;
+    }
+}
+
+.progress {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 5px;
+    z-index: 101;
+
+    opacity: .75;
+    background: none;
+}
+
+#backToTop {
+    display: none;
+    position: fixed;
+    margin: 10px;
+    right: 0;
+
+    button {
+        transition: .4s;
+
+        &:not(:hover):not(:focus) {
+            opacity: .5;
+        }
+    }
+}
+
+.preview {
+    cursor: pointer;
+
+    transition: .4s;
+
+    &:hover {
+        filter: opacity(75%) drop-shadow(5px 5px 5px rgba(0, 0, 0, .5));
+    }
+}
+
+.bootbox img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
