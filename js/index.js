@@ -11,8 +11,7 @@ function checkSideNav() {
 
 function checkSticky() {
     let sticky = $(window).scrollTop() >= $('.nav').offset().top;
-    $('.nav, .progress').toggleClass("sticky", sticky);
-    $('#backToTop, .progress').fade(sticky, 800);
+    $('.nav, .progress, #backToTop').toggleClass("sticky", sticky);
 
     let h = document.documentElement, b = document.body;
     let scroll = (h.scrollTop || b.scrollTop) / ((h.scrollHeight || b.scrollHeight) - h.clientHeight) * 100;
@@ -32,13 +31,13 @@ $(document).ready(() => {
     checkSticky();
     $(window).resize(checkSideNav).scroll(checkSticky);
 
-    $('.nav-tabs a, #backToTop').click(windowScrollTo);
+    $('.nav-link, #backToTop').click(windowScrollTo);
 
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-        $('.sidenav > .tab-pane').removeClass('active');
+    $('.nav-link').on('shown.bs.tab', function(e) {
+        $('.sidenav > .tab-pane').removeClass('show active');
 
         let target = $(e.target).attr('href');
-        $(target + "SideNav").addClass('active in');
+        $(target + "SideNav").addClass('show active');
     });
 
     $('.sidenav .list-group-item').click(function(e) {

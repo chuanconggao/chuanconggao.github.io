@@ -11,6 +11,8 @@
 
         <script src="static/js/jquery.min.js"></script>
 
+        <script src="static/js/popper.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
         <script src="static/js/bootstrap.min.js"></script>
 
@@ -26,20 +28,20 @@
 
     <body>
         <div id="background"></div>
-        <span id="backgroundNote" class="secondary" style="position: absolute; top: 0pt; right: 0pt"><small>
+        <span id="backgroundNote" class="text-muted" style="position: absolute; top: 0pt; right: 0pt"><small>
             Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
         </small></span>
 
         <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped"></div>
+            <div class="progress-bar bg-success progress-bar-striped" role="progressbar"></div>
         </div>
 
         <div id="backToTop">
-            <button class="btn btn-default" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
+            <button class="btn btn-secondary" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
         </div>
 
         <div class="sidenav tab-content">
-            <div role="tabpanel" class="tab-pane active fade in" id="projectsSideNav">
+            <div role="tabpanel" class="tab-pane show active fade" id="projectsSideNav">
                 <div class="list-group">
                     <a class="list-group-item" href="#projects_work"><span class="text-warning"><small>Work-related</small></span></a>
                     <a class="list-group-item" href="#projects_open"><span class="text-warning"><small>Open-Source</small></span></a>
@@ -65,7 +67,7 @@
             <h2 style="text-align: center">
                 <span class="double"><span class="animated double-alt">传聪</span><span class="animated double-content">Chuancong</span></span>
                 <span class="double"><span class="animated double-alt">高</span><span class="animated double-content">Gao</span></span>
-                <small class="secondary"><span>PhD Candidate</span></small>
+                <small class="text-muted"><span>PhD Candidate</span></small>
             </h2>
             <br>
             <table><tbody><tr>
@@ -81,28 +83,28 @@
                     <br>
                     <img src="img/email.png">
                     <span class="tag">
-                        <a class="btn btn-default btn-sm" href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>
-                        <a class="btn btn-default btn-sm" href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>
+                        <a class="btn btn-secondary btn-sm" href="https://www.linkedin.com/in/chuancong/"><i class="fa fa-linkedin"></i> Linkedin</a>
+                        <a class="btn btn-secondary btn-sm" href="https://www.dropbox.com/s/u032k6prfpe8v2h/resume.pdf?dl=0"><i class="fa fa-file-text"></i> Resume</a>
                     </span>
                 </td>
             </tr></tbody></table>
             <br>
             <ul class="nav nav-tabs" role="tablist" style="position: sticky; top: 0px">
-                <li role="presentation" class="active"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab"><i class="fa fa-code"></i> Projects</a></li>
-                <li role="presentation"><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab"><i class="fa fa-flask"></i> Publications</a></li>
-                <li role="presentation"><a href="#services" aria-controls="services" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> Services</a></li>
-                <li role="presentation"><a href="#education" aria-controls="education" role="tab" data-toggle="tab"><i class="fa fa-graduation-cap"></i> Education</a></li>
-                <li role="presentation"><a href="#teaching" aria-controls="teaching" role="tab" data-toggle="tab"><i class="fa fa-university"></i> Teaching &amp; Mentoring</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#projects" data-toggle="tab" role="tab"><i class="fa fa-code"></i> Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications" data-toggle="tab" role="tab"><i class="fa fa-flask"></i> Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services" data-toggle="tab" role="tab"><i class="fa fa-cogs"></i> Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education" data-toggle="tab" role="tab"><i class="fa fa-graduation-cap"></i> Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#teaching" data-toggle="tab" role="tab"><i class="fa fa-university"></i> Teaching &amp; Mentoring</a></li>
             </ul>
             <div class="tab-content" id="content">
-                <div role="tabpanel" class="table-responsive tab-pane active fade in" id="projects">
+                <div role="tabpanel" class="tab-pane show active fade" id="projects">
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
                             <td>
                                 <span class="text-primary"><i class="fa fa-star"></i> Highlights</span>
                                 <span class="tag">
-                                    <a class="btn btn-default btn-sm" href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>
+                                    <a class="btn btn-secondary btn-sm" href="https://github.com/chuanconggao"><i class="fa fa-github"></i> Github</a>
                                 </span>
                             </td>
                         </tr>
@@ -131,7 +133,7 @@
                                 <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     Automatically parse the incoming team and player statistic data, and generate detailed interactive analysis/visualization report for the team coach, towards boosting team/player performance.
                                     <br>
                                     <br>
@@ -148,7 +150,7 @@
                                 <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     Automatically collect and parse the statistic and play-by-play data after each NCAA men/women's basketball game, and generate detailed analysis/visualization report for the team coach.
                                     <br>
                                     <br>
@@ -165,7 +167,7 @@
                                 <span class="tag">Tech Lead</span>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     A TB-scale data collecting/analysis/visualization system for different data sources, including PubMed, Twitter, and any user uploaded data.
                                     <br>
                                     <br>
@@ -189,11 +191,11 @@
                             <td>
                                 <em><a href="https://github.com/chuanconggao/html2json">html2json</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://pypi.python.org/pypi/html2json">PyPi</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://pypi.python.org/pypi/html2json">PyPi</a>
                                 </span>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     A lightweight Python library that parses a HTML webpage to JSON data using a template defined in JSON (as shown in preview).
                                 </span>
                             </td>
@@ -208,7 +210,7 @@
                                 <em><a href="https://github.com/chuanconggao/PrefixSpan-py">PrefixSpan-py</a></em>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     The shortest yet efficient implementation of the most famous frequent sequential pattern mining algorithm <a href="http://www.cs.sfu.ca/~jpei/publications/span.pdf">PrefixSpan</a> in Python, in only 12 lines in core part (as shown in preview).
                                 </span>
                             </td>
@@ -226,7 +228,7 @@
                                 <br>
                                 <img src="img/projects/kdd08.jpg" width="100">
                                 <br>
-                                <span class="secondary"><small>
+                                <span class="text-muted"><small>
                                     Image from <a href="http://www.kdd.org/conferences">KDD</a>.
                                 </small></span>
                             </td>
@@ -234,7 +236,7 @@
                                 <em><a href="http://www.kdd.org/kdd-cup/view/kdd-cup-2008/Intro">KDD Cup 2008</a>: Challenge 1</em>
                                 <br>
                                 <br>
-                                <span class="secondary">
+                                <span class="text-muted">
                                     KDD Cup is a top annual data mining competition. The tasks in 2008 focus on early detection of breast cancer from X-ray images.
                                     <br>
                                     <br>
@@ -247,15 +249,15 @@
                     </table>
                 </div>
 
-                <div role="tabpanel" class="table-responsive tab-pane fade" id="publications">
+                <div role="tabpanel" class="tab-pane fade" id="publications">
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
                             <td>
                                 <span class="text-primary"><i class="fa fa-star"></i> Highlights</span>
                                 <span class="tag">
-                                    <a class="btn btn-default btn-sm" href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>
-                                    <a class="btn btn-default btn-sm" href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>
+                                    <a class="btn btn-secondary btn-sm" href="http://dblp.dagstuhl.de/pers/hd/g/Gao:Chuancong"><i class="fa fa-database"></i> DBLP</a>
+                                    <a class="btn btn-secondary btn-sm" href="https://scholar.google.ca/citations?user=XLsliVwAAAAJ&hl=en"><i class="fa fa-google"></i> Google Scholar</a>
                                 </span>
                             </td>
                         </tr>
@@ -264,11 +266,11 @@
                                 My research focuses on <mark>Database</mark>, <mark>Data Cleaning</mark>, <mark>Data Integration</mark>, and <mark>Data Mining</mark>. I have published 9 conference and journal papers.
                                 <br>
                                 <br>
-                                <span class="secondary">WI'2017</span>: Best Student Paper
+                                <span class="text-muted">WI'2017</span>: Best Student Paper
                                 <br>
-                                <span class="secondary">Tsinghua University</span>: Outstanding Master Thesis
+                                <span class="text-muted">Tsinghua University</span>: Outstanding Master Thesis
                                 <br>
-                                <span class="secondary">WWW'2008</span>: Best Poster
+                                <span class="text-muted">WWW'2008</span>: Best Poster
                             </td>
                         </tr>
                     </tbody>
@@ -293,7 +295,7 @@
                                 <br>
                                 <em><a>Data Integration on Complex Data.</a></em>
                                 <br>
-                                <span class="secondary">Simon Fraser University, 2017.</span>
+                                <span class="text-muted">Simon Fraser University, 2017.</span>
                             </td>
                         </tr>
                         <tr>
@@ -335,10 +337,10 @@
                                 <br>
                                 <em><a href="http://doi.acm.org/10.1145/3106426.3106484">Preference-driven Similarity Join.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/wi-2017-preferencedriven-similarity-join">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/wi-2017-preferencedriven-similarity-join">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">17th IEEE/WIC/ACM International Conference on Web Intelligence, 2017.</span>
+                                <span class="text-muted">17th IEEE/WIC/ACM International Conference on Web Intelligence, 2017.</span>
                             </td>
                         </tr>
                         <tr>
@@ -350,11 +352,11 @@
                                 <br>
                                 <em><a>Schema-less Join for Result Set Preferences.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="papers/iri17.pdf">Preprint</a>
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/iri-2017-schemaless-join-for-result-set-preferences">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="papers/iri17.pdf">Preprint</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/iri-2017-schemaless-join-for-result-set-preferences">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">IEEE 18th International Conference on Information Reuse and Integration, 2017.</span>
+                                <span class="text-muted">IEEE 18th International Conference on Information Reuse and Integration, 2017.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -373,7 +375,7 @@
                                 <br>
                                 <em><a href="https://doi.org/10.1007/s10115-015-0892-x">Continuous Similarity Search for Evolving Queries.</a></em>
                                 <br>
-                                <span class="secondary">Knowledge and Information Systems, 2016.</span>
+                                <span class="text-muted">Knowledge and Information Systems, 2016.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -405,10 +407,10 @@
                                 <br>
                                 <em><a href="http://doi.acm.org/10.1145/2247596.2247628">Top-k interesting phrase mining in ad-hoc collections using sequence pattern indexing.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/edbt-12-topk-interesting-phrase-mining-in-adhoc-collections-using-sequence-pattern-indexing">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/edbt-12-topk-interesting-phrase-mining-in-adhoc-collections-using-sequence-pattern-indexing">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">15th International Conference on Extending Database Technology, 2012.</span>
+                                <span class="text-muted">15th International Conference on Extending Database Technology, 2012.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -427,10 +429,10 @@
                                 <br>
                                 <em><a href="http://doi.ieeecomputersociety.org/10.1109/ICDM.2011.61">Efficient Discovery of Closed Sequential Patterns over Stream Sliding Window.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/icde-2011-efficient-mining-of-closed-sequential-patterns-on-stream-sliding-window">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/icde-2011-efficient-mining-of-closed-sequential-patterns-on-stream-sliding-window">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">11th IEEE International Conference on Data Mining, 2011.</span>
+                                <span class="text-muted">11th IEEE International Conference on Data Mining, 2011.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -463,10 +465,10 @@
                                 <br>
                                 <em><a href="http://innopac.lib.tsinghua.edu.cn/search~S5*eng?/c100240140/c100240140/-3%2C-1%2C0%2CB/frameset&FF=c100240140&1%2C1%2C">Pattern Discovery Algorithms for Classification.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/master-thesis-2010-pattern-discovery-algorithms-for-classification">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/master-thesis-2010-pattern-discovery-algorithms-for-classification">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">Tsinghua University, 2010.</span>
+                                <span class="text-muted">Tsinghua University, 2010.</span>
                             </td>
                         </tr>
                         <tr>
@@ -479,10 +481,10 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1871437.1871782">SEQUEL: Query Completion via Frequent Pattern Mining on Multi-Column Structural Data.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/cikm-2010-demo-sequel-query-completion-via-pattern-mining-on-multicolumn-structural-data">Poster</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/cikm-2010-demo-sequel-query-completion-via-pattern-mining-on-multicolumn-structural-data">Poster</a>
                                 </span>
                                 <br>
-                                <span class="secondary">19th ACM Conference on Information and Knowledge Management, 2010.</span>
+                                <span class="text-muted">19th ACM Conference on Information and Knowledge Management, 2010.</span>
                             </td>
                         </tr>
                         <tr>
@@ -494,12 +496,12 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1835804.1835913">Direct Mining of Discriminative Patterns for Classifying Uncertain Data.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data">Slides</a>
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data-70432708">Poster</a>
-                                    <a class="btn btn-default btn-xs" href="https://github.com/chuanconggao/uHarmony">Code</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/kdd-2010-direct-mining-of-discriminative-patterns-for-classifying-uncertain-data-70432708">Poster</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://github.com/chuanconggao/uHarmony">Code</a>
                                 </span>
                                 <br>
-                                <span class="secondary">16th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2010.</span>
+                                <span class="text-muted">16th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2010.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -518,10 +520,10 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1645953.1646000">Efficient Itemset Generator Discovery Over a Stream Sliding Window.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/cikm-2009-efficient-itemset-generator-discovery-over-a-stream-sliding-window">Slides</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/cikm-2009-efficient-itemset-generator-discovery-over-a-stream-sliding-window">Slides</a>
                                 </span>
                                 <br>
-                                <span class="secondary">18th ACM Conference on Information and Knowledge Management, 2009.</span>
+                                <span class="text-muted">18th ACM Conference on Information and Knowledge Management, 2009.</span>
                             </td>
                         </tr>
                         <tr class="no-hover">
@@ -548,17 +550,17 @@
                                 <br>
                                 <em><a class="text-info" href="http://doi.acm.org/10.1145/1367497.1367651">Efficient Mining of Frequent Sequence Generators.</a></em>
                                 <span class="btn-group">
-                                    <a class="btn btn-default btn-xs" href="https://www.slideshare.net/ChuancongGao/www-2008-poster-efficient-mining-of-frequent-sequence-generators">Poster</a>
+                                    <a class="btn btn-outline-secondary btn-sm" href="https://www.slideshare.net/ChuancongGao/www-2008-poster-efficient-mining-of-frequent-sequence-generators">Poster</a>
                                 </span>
                                 <br>
-                                <span class="secondary">17th International Conference on World Wide Web, 2008.</span>
+                                <span class="text-muted">17th International Conference on World Wide Web, 2008.</span>
                             </td>
                         </tr>
                     </tbody>
                     </table>
                 </div>
 
-                <div role="tabpanel" class="table-responsive tab-pane fade" id="services">
+                <div role="tabpanel" class="tab-pane fade" id="services">
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
@@ -638,7 +640,7 @@
                                 <span class="text-info">2007 - Now</span>
                             </td>
                             <td>
-                                <span class="secondary">Multiple Top Conferences</span>
+                                <span class="text-muted">Multiple Top Conferences</span>
                             </td>
                             <td></td>
                         </tr>
@@ -664,7 +666,7 @@
                     </table>
                 </div>
 
-                <div role="tabpanel" class="table-responsive tab-pane fade" id="education">
+                <div role="tabpanel" class="tab-pane fade" id="education">
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
@@ -731,7 +733,7 @@
                     </table>
                 </div>
 
-                <div role="tabpanel" class="table-responsive tab-pane fade" id="teaching">
+                <div role="tabpanel" class="tab-pane fade" id="teaching">
                     <table class="table table-hover">
                     <tbody>
                         <tr class="no-hover">
@@ -765,7 +767,7 @@
                                 Undergraduate Course "Database System"
                             </td>
                             <td>
-                                <span class="secondary">Simon Fraser University</span>
+                                <span class="text-muted">Simon Fraser University</span>
                             </td>
                         </tr>
                         <tr>
@@ -776,7 +778,7 @@
                                 Undergraduate Course "Introduction to the Internet and the World Wide Web"
                             </td>
                             <td>
-                                <span class="secondary">Simon Fraser University</span>
+                                <span class="text-muted">Simon Fraser University</span>
                             </td>
                         </tr>
                         <tr>
@@ -787,7 +789,7 @@
                                 Undergraduate Course "Comparative Programming Languages"
                             </td>
                             <td>
-                                <span class="secondary">Simon Fraser University</span>
+                                <span class="text-muted">Simon Fraser University</span>
                             </td>
                         </tr>
                         <tr>
@@ -798,7 +800,7 @@
                                 Undergraduate Course "Operating Systems"
                             </td>
                             <td>
-                                <span class="secondary">Simon Fraser University</span>
+                                <span class="text-muted">Simon Fraser University</span>
                             </td>
                         </tr>
                         <tr>
@@ -809,7 +811,7 @@
                                 Graduate Course "Data Mining"
                             </td>
                             <td>
-                                <span class="secondary">Tsinghua University</span>
+                                <span class="text-muted">Tsinghua University</span>
                             </td>
                         </tr>
                     </tbody>
@@ -817,7 +819,7 @@
                 </div>
             </div>
             <div style="text-align: right">
-                <span class="secondary"><small>Copyright © Chuancong Gao</small></span>
+                <span class="text-muted"><small>Copyright © Chuancong Gao</small></span>
             </div>
         </div>
 <!-- Start of StatCounter Code for Default Guide -->

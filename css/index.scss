@@ -20,23 +20,19 @@ table {
 .table-hover > tbody > tr {
     transition: .4s;
 
+    th, td {
+        border-top: 0;
+    }
+
     &.no-hover {
         background-color: inherit !important;
     }
 }
 
-mark {
-    padding: .1em;
-}
-
-.secondary {
-    color: rgba(255, 255, 255, .4);
-}
-
 a {
     color: #df691a !important;
 
-    &[role="tab"],
+    &.nav-link,
     &.list-group-item,
     &.btn {
         color: #fff !important;
@@ -58,7 +54,7 @@ a {
 }
 
 .tab-content {
-    background-color: rgba(43, 62, 80, .6);
+    background-color: rgba(43, 62, 80, .5);
 
     > .tab-pane {
         border: 1px solid #4e5d6c;
@@ -69,17 +65,20 @@ a {
 
 .nav-tabs {
     z-index: 100;
-    border-bottom: 0;
 
     transition: .8s;
 
-    > li.active > a {
-        color: rgba(255, 255, 255, .4) !important;
-        background-color: rgba(43, 62, 80, .6) !important;
+    &.sticky {
+        background-color: rgb(43, 62, 80);
     }
 
-    &.sticky {
-        background-color: rgba(43, 62, 80, .9);
+    &:not(.sticky) {
+        border-bottom: 0;
+    }
+
+    .nav-link.active, .nav-link:hover {
+        color: rgba(255, 255, 255, .4) !important;
+        background-color: rgba(43, 62, 80, .5) !important;
     }
 }
 
@@ -193,22 +192,36 @@ body.cool * {
     }
 }
 
+.sticky {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 .progress {
-    display: none;
     position: fixed;
     width: 100%;
     height: 5px;
     z-index: 101;
 
-    opacity: .75;
     background: none;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
+
+    .progress-bar {
+        opacity: .5;
+    }
 }
 
 #backToTop {
-    display: none;
     position: fixed;
     margin: 10px;
     right: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .8s;
 
     button {
         transition: .4s;
