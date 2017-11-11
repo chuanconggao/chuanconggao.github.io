@@ -830,7 +830,7 @@ if (window.location.hostname != "localhost") {
     var sc_security = "688eef80";
 
     var scJsHost = ("https:" == window.location.protocol) ? "https://secure." : "http://www.";
-    document.write(`<script type='text/javascript' src='${scJsHost}statcounter.com/counter/counter.js'></script>`);
+    $.getScript(scJsHost + 'statcounter.com/counter/counter.js');
 }
 </script>
 <!-- End of StatCounter Code for Default Guide -->
