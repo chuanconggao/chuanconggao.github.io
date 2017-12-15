@@ -244,9 +244,13 @@ body.cool * {
     }
 }
 
-.bootbox img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+.bootbox .modal-dialog {
+    max-width: 1000px;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
 }
