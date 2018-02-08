@@ -1,7 +1,12 @@
+HTMLFILES = $(shell find html -type f -name "*.html")
+
 CSS = css/index
 JS = js/index
 
-all: $(CSS).min.css $(JS).min.js
+all: index.html $(CSS).min.css $(JS).min.js
+
+index.html: $(HTMLFILES)
+	bin/renderJinja2.py html/index.html > index.html
 
 $(CSS).min.css: $(CSS).scss
 	scss $(CSS).scss | csso > $(CSS).min.css
@@ -10,5 +15,6 @@ $(JS).min.js: $(JS).js
 	uglifyjs $(JS).js > $(JS).min.js
 
 clean:
-	rm $(CSS).min.css
-	rm $(JS).min.js
+	rm -f index.html
+	rm -f $(CSS).min.css
+	rm -f $(JS).min.js

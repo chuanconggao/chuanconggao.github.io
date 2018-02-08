@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="img/chuancong.jpg">
+
+        <title>
+            Homepage of Chuancong Gao
+        </title>
+
+        <!--<script src="static/js/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <!--<script src="static/js/popper.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+        <!--<script src="static/js/bootstrap.min.js"></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+        <script src="static/js/bootbox.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="static/css/animate.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/index.min.css">
+        <script src="js/index.min.js"></script>
+    </head>
+
+    <body>
+        <div id="background"></div>
+        <span id="backgroundNote" class="text-muted" style="position: absolute; top: 0pt; right: 0pt"><small>
+            Random photo from <a href="http://www.unsplash.com">Unsplash</a>.
+        </small></span>
+
+        <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped" role="progressbar"></div>
+        </div>
+
+        <div id="backToTop">
+            <button class="btn btn-secondary" title="Go to Top"><i class="fa fa-arrow-up"></i></button>
+        </div>
+
+        {% include "sideNav.html" %}
+
+        <div class="container" style="max-width: 1000px">
+            <br>
+            {% include "header.html" %}
+            <br>
+            <ul class="nav nav-tabs" role="tablist" style="position: sticky; top: 0px">
+                <li class="nav-item"><a class="nav-link active" href="#projects" data-toggle="tab" role="tab"><i class="fa fa-code"></i> Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications" data-toggle="tab" role="tab"><i class="fa fa-flask"></i> Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services" data-toggle="tab" role="tab"><i class="fa fa-cogs"></i> Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education" data-toggle="tab" role="tab"><i class="fa fa-graduation-cap"></i> Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#teaching" data-toggle="tab" role="tab"><i class="fa fa-university"></i> Teaching &amp; Mentoring</a></li>
+            </ul>
+            <div class="tab-content" id="content">
+                {% include "projects.html" %}
+
+                {% include "publications.html" %}
+
+                {% include "services.html" %}
+
+                {% include "education.html" %}
+
+                {% include "teaching.html" %}
+            </div>
+            <div style="text-align: right">
+                <span class="text-muted"><small>Copyright © Chuancong Gao</small></span>
+            </div>
+        </div>
+
+        {% include "tracking.html" %}
+    </body>
+</html>
