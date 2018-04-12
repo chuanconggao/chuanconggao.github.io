@@ -6,7 +6,7 @@ JS = js/index
 all: index.html $(CSS).min.css $(JS).min.js
 
 index.html: $(HTMLFILES)
-	bin/renderJinja2.py html/index.html > index.html
+	jinja2 html/index.html > index.html
 
 $(CSS).min.css: $(CSS).scss
 	scss $(CSS).scss | csso > $(CSS).min.css
